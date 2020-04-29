@@ -1,3 +1,11 @@
-h1 {
-    background-color: navajowhite;
+.indent {
+    padding-left: 5.45rem
+}
+
+.marker {
+    list-style: circle inside ;
+}
+
+a:hover {
+    color: red;
 }
