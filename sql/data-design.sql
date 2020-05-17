@@ -28,7 +28,7 @@ CREATE TABLE build(
 
 CREATE TABLE comments(
     commentProfileId binary(16) not null,
-    commentBuildId binary(16) not null,
+    commentBuildId binWary(16) not null,
     commentDate datetime(3) not null,
     commentContent varchar(300) not null,
     index(commentProfileId),
