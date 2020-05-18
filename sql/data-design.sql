@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS buildLikes;
 DROP TABLE IF EXISTS build;
 DROP TABLE IF EXISTS profile;
 
@@ -8,6 +8,7 @@ CREATE TABLE profile(
     profileEmail varchar(128) not null,
     profileHash char(97) not null,
     profileUsername varchar(32) not null,
+    profileCreationDate datetime(3) not null,
     unique(profileEmail),
     unique(profileUsername),
     index(profileEmail),
@@ -26,14 +27,13 @@ CREATE TABLE build(
     primary key(buildId)
 );
 
-CREATE TABLE comments(
-    commentProfileId binary(16) not null,
-    commentBuildId binWary(16) not null,
-    commentDate datetime(3) not null,
-    commentContent varchar(300) not null,
-    index(commentProfileId),
-    index(commentBuildId),
-    foreign key(commentProfileId) references profile(profileId),
-    foreign key(commentBuildId) references build(buildId),
-    primary key(commentProfileId, commentBuildId)
+CREATE TABLE buildLike(
+    buildLikeProfileId binary(16) not null,
+    buildLikeBuildId binary(16) not null,
+    buildLike datetime(3) not null,
+    index(buildLikeProfileId),
+    index(buildLikeBuildId),
+    foreign key(buildLikeProfileId) references profile(profileId),
+    foreign key(buildLikeBuildId) references build(buildId),
+    primary key(buildLikeProfileId, buildLikeBuildId)
 );

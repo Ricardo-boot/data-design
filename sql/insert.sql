@@ -1,0 +1,5 @@
+INSERT INTO profile(profileId, profileActivationToken, profileEmail, profileHash, profileUsername, profileCreationDate) VALUES (UNHEX("a461673d69cf4a0781f5aada38195b85"), "token0", "jason123@email.com", "password0", "jasonbuild", NOW());
+INSERT INTO profile(profileId, profileActivationToken, profileEmail, profileHash, profileUsername, profileCreationDate) VALUES (UNHEX("99ee99b5f7874dd1a528de4feb4b9367"), "token1", "mark123@email.com", "password1", "markymark", NOW());
+INSERT INTO profile(profileId, profileActivationToken, profileEmail, profileHash, profileUsername, profileCreationDate) VALUES (UNHEX("dfb74d8c3743483c9a7a5e00acfb4985"), "token2", "jonathan123@email.com", "password3", "jonathanbuild", NOW());
+
+INSERT INTO build(buildId, buildProfileId, buildName, buildContent, buildDate, buildPrice) VALUES (UNHEX("be5b9aee4ede4b07a47c3919738e9579"), UNHEX("a461673d69cf4a0781f5aada38195b85"), "AMD Ryzen 5 build", "Super expensive PC components", '2020-05-03 12:34:00', 950);
